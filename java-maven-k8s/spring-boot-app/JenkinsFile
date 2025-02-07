@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'channamma/happyapp'  // Replace with your DockerHub image
+      image 'channamma/maven-docker-agent:v1'  // Replace with your DockerHub image
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }

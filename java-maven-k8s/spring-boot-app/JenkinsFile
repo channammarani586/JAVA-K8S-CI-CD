@@ -21,18 +21,21 @@ pipeline {
       }
     }
 
-    stage('Build and Test') {
-      steps {
-        sh '''
-          echo "Listing files..."
-          ls -ltr
-          echo "Navigating to the correct directory..."
-          cd java-maven-k8s/spring-boot-app
-          echo "Running Maven Build..."
-          mvn clean package
-        '''
-      }
-    }
+stage('Build and Test') {
+  steps {
+    sh '''
+      echo "Listing files..."
+      ls -ltr
+      echo "Navigating to the correct directory..."
+      cd java-maven-k8s/spring-boot-app
+      echo "Running Maven Build..."
+      mvn clean package
+      echo "Checking target directory..."
+      ls -ltr target/
+    '''
+  }
+}
+
 
     stage('Build and Push Docker Image') {
       steps {

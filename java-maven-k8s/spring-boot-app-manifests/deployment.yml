@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: happyapp
-        image: channamma/happyapp:${BUILD_NUMBER}  # Updated to use BUILD_NUMBER
+        image: channamma/happyapp:latest  # Jenkins will replace this line before committing
         ports:
         - containerPort: 8080
